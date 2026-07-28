@@ -13,8 +13,12 @@ export const OWNER = import.meta.env.VITE_GH_OWNER || "ncheikha-bot";
 export const REPO = import.meta.env.VITE_GH_REPO || "xel-i-site";
 export const BRANCH = import.meta.env.VITE_GH_BRANCH || "main";
 
-export const FICHIER_ARTICLES = "blog/articles.json";
-export const FICHIER_ACCES = "blog/acces.json";
+/* Chemin des fichiers DANS LE DÉPÔT (peut différer du chemin servi) :
+   - dépôt qui sert les fichiers à la racine → "blog/…"
+   - dépôt source Vite → "public/blog/…" (via VITE_REPO_BLOG_DIR) */
+const DOSSIER_DEPOT = import.meta.env.VITE_REPO_BLOG_DIR || "blog";
+export const FICHIER_ARTICLES = `${DOSSIER_DEPOT}/articles.json`;
+export const FICHIER_ACCES = `${DOSSIER_DEPOT}/acces.json`;
 const API = "https://api.github.com";
 
 /* ---------- Requête API ---------- */
@@ -100,7 +104,8 @@ export async function dechiffrerTexte(bloc, motDePasse) {
 /* ---------- Comptes (blog/acces.json — public mais chiffré) ---------- */
 export async function chargerComptes() {
   try {
-    const r = await fetch(asset(FICHIER_ACCES) + "?t=" + Date.now());
+    /* Côté navigateur, le fichier est toujours servi sous blog/ */
+    const r = await fetch(asset("blog/acces.json") + "?t=" + Date.now());
     if (r.status === 404) return null;
     if (!r.ok) throw new Error("HTTP " + r.status);
     const data = await r.json();
