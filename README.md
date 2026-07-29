@@ -40,17 +40,42 @@ src/
   styles/style.css, admin.css ← styles (identiques à la version d'origine)
 ```
 
-## Configuration du déploiement
+## Déploiement
+
+**Le site en ligne est https://ncheikha-bot.github.io/xel-i-site/** — c'est le lien
+partagé au client. Ce dépôt-ci (`xel-i-react`) contient le **code source** ; le
+dépôt `xel-i-site` contient le **build servi**.
+
+### Mettre le site à jour
+
+```bash
+# 1. Récupérer les articles publiés depuis l'admin (sinon ils seraient écrasés)
+curl -s https://ncheikha-bot.github.io/xel-i-site/blog/articles.json \
+  -o public/blog/articles.json
+
+# 2. Construire pour le lien client
+VITE_BASE=/xel-i-site/ VITE_GH_REPO=xel-i-site npm run build
+
+# 3. Copier dist/ dans le clone du dépôt xel-i-site, puis commit + push
+```
+
+⚠️ **L'étape 1 est importante** : les articles publiés via `/admin` sont écrits
+directement dans le dépôt `xel-i-site`. Sans cette récupération, un nouveau build
+les remplacerait par le contenu local de `public/blog/articles.json`.
+
+### Autres hébergements
 
 Le chemin de base est réglable **sans toucher au code** :
 
 | Hébergement | Commande |
 |---|---|
-| GitHub Pages (sous-dossier) | `npm run build` (base `/xel-i-site/` par défaut) |
+| GitHub Pages (sous-dossier) | `VITE_BASE=/xel-i-site/ npm run build` |
 | Domaine propre, Netlify, Vercel | `VITE_BASE=/ npm run build` |
 
 Autres variables (optionnelles, pour pointer un autre dépôt) :
-`VITE_GH_OWNER`, `VITE_GH_REPO`, `VITE_GH_BRANCH`.
+`VITE_GH_OWNER`, `VITE_GH_REPO`, `VITE_GH_BRANCH`, `VITE_REPO_BLOG_DIR`
+(chemin du dossier blog *dans le dépôt* — `blog` si le dépôt sert les fichiers
+à la racine, `public/blog` pour un dépôt source Vite).
 
 ### Netlify / Vercel
 
