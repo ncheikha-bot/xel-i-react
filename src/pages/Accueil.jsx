@@ -15,6 +15,7 @@ import Valeurs from "../sections/Valeurs.jsx";
 import Pedagogie from "../sections/Pedagogie.jsx";
 import Ateliers from "../sections/Ateliers.jsx";
 import ArtThlete from "../sections/ArtThlete.jsx";
+import EmploiDuTemps from "../sections/EmploiDuTemps.jsx";
 import Theatre from "../sections/Theatre.jsx";
 import Equipe from "../sections/Equipe.jsx";
 import Galerie from "../sections/Galerie.jsx";
@@ -26,8 +27,8 @@ export default function Accueil() {
   const { hash } = useLocation();
   useScrollReveal("accueil");
   useDocumentMeta(
-    "Xel i — École d'art à Dakar · Peinture, dessin, poterie, sculpture, calligraphie, crochet & théâtre",
-    "Xel i, première école d'art extrascolaire du Sénégal, pour enfants et adultes. Peinture, dessin, poterie, sculpture, calligraphie, crochet et théâtre — et Art-Thlète, le programme qui allie art et sport. Dakar-Mermoz, bientôt aux Almadies et à Ngor."
+    "Xel-i — École d'art à Dakar · Peinture, théâtre, calligraphie, dessin, modelage, perlage",
+    "Xel-i, première école d'art extrascolaire de Dakar, ouverte toute l'année pour enfants et adultes. 7 disciplines, matériel fourni, et ART'thlète (art + sport) à Mermoz et sur l'île de Ngor. Almadies en octobre 2026."
   );
 
   /* Défilement vers l'ancre après le rendu (navigation depuis une autre page) */
@@ -50,6 +51,7 @@ export default function Accueil() {
       <Pedagogie />
       <Ateliers />
       <ArtThlete />
+      <EmploiDuTemps />
       <Theatre />
       <Equipe />
       <Galerie />

@@ -1,7 +1,7 @@
 /* ============ CONTACT : coordonnées + formulaire (prêt pour Formspree) ============ */
 
 import { useState } from "react";
-import { WHATSAPP } from "../components/Footer.jsx";
+import { CONTACTS, WHATSAPP_MERMOZ, WHATSAPP_NGOR } from "../lib/contenu.js";
 
 /* Remplacer VOTRE_ID par l'identifiant Formspree pour activer l'envoi (voir README) */
 const FORMSPREE = "https://formspree.io/f/VOTRE_ID";
@@ -66,30 +66,51 @@ export default function Contact() {
             Contactez-nous pour une rencontre sans engagement.
           </p>
 
-          <ul className="contact__list reveal" style={{ "--d": ".2s" }}>
-            <li>
-              <span className="chip" aria-hidden="true">📍</span>
-              <div><strong>Adresse</strong><p>Dakar-Mermoz, Sénégal</p></div>
+          {/* Les deux sites, chacun avec son numéro */}
+          <ul className="contact__sites reveal" style={{ "--d": ".2s" }}>
+            <li className="contact__site">
+              <p className="contact__site-nom">{CONTACTS.mermoz.nom}</p>
+              <p className="contact__site-lieu">{CONTACTS.mermoz.lieu}</p>
+              <p className="contact__site-tel">
+                <a href={"tel:" + CONTACTS.mermoz.telInternational}>{CONTACTS.mermoz.tel}</a>
+              </p>
+              <a href={WHATSAPP_MERMOZ} className="btn btn--ghost btn--petit" target="_blank" rel="noopener">
+                WhatsApp Mermoz
+              </a>
             </li>
-            <li>
-              <span className="chip" aria-hidden="true">📞</span>
-              <div>
-                <strong>Téléphone / WhatsApp — 24h/24</strong>
-                <p>
-                  <a href="tel:+221787164646">+221 78 716 46 46</a> ·{" "}
-                  <a href={WHATSAPP} target="_blank" rel="noopener">écrire sur WhatsApp</a>
-                </p>
-              </div>
+            <li className="contact__site">
+              <p className="contact__site-nom">{CONTACTS.ngor.nom}</p>
+              <p className="contact__site-lieu">{CONTACTS.ngor.lieu}</p>
+              <p className="contact__site-tel">
+                <a href={"tel:" + CONTACTS.ngor.telInternational}>{CONTACTS.ngor.tel}</a>
+              </p>
+              <a href={WHATSAPP_NGOR} className="btn btn--ghost btn--petit" target="_blank" rel="noopener">
+                WhatsApp Ngor
+              </a>
             </li>
+          </ul>
+
+          <ul className="contact__list reveal" style={{ "--d": ".26s" }}>
             <li>
               <span className="chip" aria-hidden="true">✉️</span>
-              <div><strong>Email</strong><p><a href="mailto:xeliecoldart@gmail.com">xeliecoldart@gmail.com</a></p></div>
+              <div><strong>Email</strong><p><a href={"mailto:" + CONTACTS.email}>{CONTACTS.email}</a></p></div>
             </li>
             <li>
               <span className="chip" aria-hidden="true">📸</span>
               <div>
                 <strong>Instagram</strong>
-                <p><a href="https://instagram.com/ecolexeli" target="_blank" rel="noopener">@ecolexeli</a></p>
+                <p>
+                  <a href={"https://instagram.com/" + CONTACTS.instagram} target="_blank" rel="noopener">
+                    @{CONTACTS.instagram}
+                  </a>
+                </p>
+              </div>
+            </li>
+            <li>
+              <span className="chip" aria-hidden="true">🏫</span>
+              <div>
+                <strong>Bientôt aux Almadies</strong>
+                <p>Ouverture à la rentrée, en octobre 2026</p>
               </div>
             </li>
           </ul>

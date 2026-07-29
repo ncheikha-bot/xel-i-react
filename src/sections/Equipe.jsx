@@ -1,7 +1,12 @@
-/* ============ L'ÉQUIPE : professeurs diplômés des Beaux-Arts ============ */
+/* ============ L'ÉQUIPE : professeurs reconnus, diplômés des Beaux-Arts ============ */
 
 import { asset } from "../lib/blog.js";
-import { WHATSAPP } from "../components/Footer.jsx";
+import { WHATSAPP_MERMOZ } from "../lib/contenu.js";
+
+const METIERS = [
+  "Réalisateurs", "Comédiens", "Sculpteurs",
+  "Peintres", "Percussionnistes", "Calligraphes",
+];
 
 export default function Equipe() {
   return (
@@ -27,19 +32,26 @@ export default function Equipe() {
         <div className="equipe__content">
           <p className="section__label reveal">L'équipe</p>
           <h2 className="section__title reveal" style={{ "--d": ".08s" }}>
-            Jeune, passionnée, <span className="script accent">diplômée des Beaux-Arts</span>
+            Des professeurs <span className="script accent">reconnus</span>, venus de tous horizons
           </h2>
           <p className="reveal" style={{ "--d": ".16s" }}>
-            Nos professeurs sont diplômés des Beaux-Arts, jeunes et passionnés. Plus qu'une
-            école, Xel i est un lieu de vie où les enfants grandissent ensemble — entourés
-            d'adultes qui aiment profondément leur métier.
+            Une équipe passionnée d'art : des professeurs reconnus de différents horizons, et des
+            assistants pédagogiques professionnels <strong>diplômés des Beaux-Arts</strong>.
+            Plus qu'une école, Xel-i est un lieu de vie où les enfants grandissent ensemble.
           </p>
-          <p className="reveal" style={{ "--d": ".22s" }}>
-            Une question, un doute, une inscription de dernière minute ? L'équipe est très
-            réactive par appel et WhatsApp, à toute heure.
+
+          <ul className="tags tags--clair reveal" style={{ "--d": ".22s" }}>
+            {METIERS.map((m) => <li key={m}>{m}</li>)}
+          </ul>
+
+          <p className="reveal" style={{ "--d": ".26s" }}>
+            Un lien fort avec les familles : <strong>disponibilité constante et communication
+            régulière</strong> avec les parents tout au long du programme — par appel et sur
+            WhatsApp, à toute heure.
           </p>
-          <div className="hero__actions reveal" style={{ "--d": ".28s" }}>
-            <a href={WHATSAPP} className="btn btn--primary" target="_blank" rel="noopener">
+
+          <div className="hero__actions reveal" style={{ "--d": ".3s" }}>
+            <a href={WHATSAPP_MERMOZ} className="btn btn--primary" target="_blank" rel="noopener">
               Écrire sur WhatsApp — 24h/24
             </a>
           </div>

@@ -10,8 +10,9 @@ import { useHeaderScrolled } from "../lib/hooks.js";
 /* Sur l'accueil les liens sont des ancres ; ailleurs ils ramènent à l'accueil */
 const LIENS = [
   { ancre: "#ecole", libelle: "L'école" },
-  { ancre: "#ateliers", libelle: "Ateliers" },
-  { ancre: "#artthlete", libelle: "Art-Thlète" },
+  { ancre: "#ateliers", libelle: "Disciplines" },
+  { ancre: "#artthlete", libelle: "ART'thlète" },
+  { ancre: "#emploi-du-temps", libelle: "Horaires" },
   { ancre: "#galerie", libelle: "Galerie" },
   { route: "/blog", libelle: "Blog" },
 ];

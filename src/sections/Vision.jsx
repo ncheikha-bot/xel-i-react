@@ -43,31 +43,46 @@ export default function Vision() {
             L'art pour tous, <span className="script accent">dès le plus jeune âge</span>
           </h2>
           <p className="reveal" style={{ "--d": ".16s" }}>
-            Xel i est née d'une conviction profonde : les compétences artistiques doivent être
-            accessibles à tous les enfants sénégalais, dès le plus jeune âge. Xel i n'est pas un
-            simple lieu d'activités — c'est un espace de construction intérieure, de construction
-            sociale et de découverte de soi, ancré dans les valeurs humanistes et la richesse
-            culturelle de l'Afrique de l'Ouest.
+            Xel-i est née d'une conviction profonde : les compétences artistiques doivent être
+            accessibles dès le plus jeune âge. Dans un monde plein d'images, Xel-i apprend aux
+            enfants à <strong>expérimenter leurs créations</strong>, à développer leur confiance
+            en étant libres et fiers de ce qu'ils créent, et à prendre goût au processus qui
+            donne vie à une création.
           </p>
           <p className="reveal" style={{ "--d": ".22s" }}>
-            L'ambition est aujourd'hui plus large : devenir un espace artistique multiculturel et
-            multigénérationnel, avec des cours adaptés à chaque âge et des ateliers qui rassemblent
-            les familles autour de la création. Et pour être au plus proche des familles, Xel i
-            veut ouvrir des écoles partout au Sénégal.
+            Xel-i facilite aussi la vie des parents, qui manquent de temps, tout en assurant le
+            développement global et le bien-être de leur enfant. L'école est{" "}
+            <strong>ouverte toute l'année</strong>, pour les enfants comme pour les adultes.
           </p>
 
-          <p className="ouvertures reveal" style={{ "--d": ".26s" }}>
-            <span className="ouvertures__pin" aria-hidden="true">📍</span>
-            <span>
-              <strong>Bientôt près de chez vous :</strong> prochaines ouvertures aux{" "}
-              <strong>Almadies</strong> et à <strong>Ngor</strong>.
-            </span>
-          </p>
+          <ul className="lieux reveal" style={{ "--d": ".26s" }}>
+            <li className="lieu lieu--ouvert">
+              <span className="lieu__etat">Ouvert</span>
+              <div>
+                <strong>Olympic Club — Mermoz</strong>
+                <p>Cours d'art à l'année &amp; ART'thlète Tennis</p>
+              </div>
+            </li>
+            <li className="lieu lieu--ouvert">
+              <span className="lieu__etat">Ouvert</span>
+              <div>
+                <strong>Île de Ngor</strong>
+                <p>Camp ART'thlète — art, sport et mer</p>
+              </div>
+            </li>
+            <li className="lieu lieu--bientot">
+              <span className="lieu__etat">Octobre 2026</span>
+              <div>
+                <strong>Almadies</strong>
+                <p>Un espace quatre fois plus grand que le site actuel</p>
+              </div>
+            </li>
+          </ul>
 
           <ul className="stats reveal" style={{ "--d": ".3s" }}>
-            <Stat cible={1} exposant="ʳᵉ" libelle="école d'art extrascolaire du Sénégal, enfants & adultes" />
-            <Stat cible={7} suffixe=" disciplines" libelle="de la peinture au théâtre, en passant par la calligraphie" />
-            <Stat cible={2} prefixe="dès " suffixe=" ans ½" libelle="avec Art-Thlète à Mermoz — et des cours pour adultes" />
+            <Stat cible={1} exposant="ʳᵉ" libelle="école d'art extrascolaire de Dakar, enfants & adultes" />
+            <Stat cible={7} suffixe=" disciplines" libelle="de la peinture au perlage — tout le matériel est fourni" />
+            <Stat cible={3} suffixe=" lieux" libelle="Mermoz, île de Ngor, et les Almadies à la rentrée" />
           </ul>
         </div>
       </div>

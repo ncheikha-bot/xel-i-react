@@ -3,8 +3,10 @@
    ========================================================================== */
 
 import { Link } from "react-router-dom";
+import { CONTACTS, WHATSAPP_MERMOZ, WHATSAPP_NGOR } from "../lib/contenu.js";
 
-export const WHATSAPP = "https://wa.me/221787164646?text=Bonjour%20Xel%20i%20!";
+/* Conservé pour compatibilité : le bouton flottant pointe sur Mermoz */
+export const WHATSAPP = WHATSAPP_MERMOZ;
 
 export function WhatsappFab() {
   return (
@@ -38,25 +40,37 @@ export default function Footer() {
           <h3>Explorer</h3>
           <ul>
             <li><Link to="/#ecole">L'école</Link></li>
-            <li><Link to="/#ateliers">Les cours d'art</Link></li>
-            <li><Link to="/#artthlete">Art-Thlète</Link></li>
-            <li><Link to="/#theatre">Théâtre à l'école</Link></li>
+            <li><Link to="/#ateliers">Les 7 disciplines</Link></li>
+            <li><Link to="/#artthlete">ART'thlète</Link></li>
+            <li><Link to="/#ngor">Île de Ngor</Link></li>
+            <li><Link to="/#emploi-du-temps">Emploi du temps</Link></li>
+            <li><Link to="/#theatre">Écoles partenaires</Link></li>
             <li><Link to="/#equipe">L'équipe</Link></li>
             <li><Link to="/blog">Blog</Link></li>
             <li><Link to="/#inscription">Inscription</Link></li>
-            <li><Link to="/#contact">Contact</Link></li>
           </ul>
         </nav>
 
         <div className="footer__contact">
-          <h3>Nous joindre</h3>
+          <h3>Nos deux sites</h3>
           <ul>
-            <li><a href="mailto:xeliecoldart@gmail.com">xeliecoldart@gmail.com</a></li>
-            <li><a href="tel:+221787164646">+221 78 716 46 46</a></li>
-            <li><a href={WHATSAPP} target="_blank" rel="noopener">WhatsApp — 24h/24</a></li>
-            <li><a href="https://instagram.com/ecolexeli" target="_blank" rel="noopener">Instagram — @ecolexeli</a></li>
-            <li>Dakar-Mermoz, Sénégal</li>
-            <li>Bientôt : Almadies &amp; Ngor</li>
+            <li>
+              <strong>{CONTACTS.mermoz.nom}</strong><br />
+              <a href={"tel:" + CONTACTS.mermoz.telInternational}>{CONTACTS.mermoz.tel}</a> ·{" "}
+              <a href={WHATSAPP_MERMOZ} target="_blank" rel="noopener">WhatsApp</a>
+            </li>
+            <li>
+              <strong>{CONTACTS.ngor.nom}</strong><br />
+              <a href={"tel:" + CONTACTS.ngor.telInternational}>{CONTACTS.ngor.tel}</a> ·{" "}
+              <a href={WHATSAPP_NGOR} target="_blank" rel="noopener">WhatsApp</a>
+            </li>
+            <li><a href={"mailto:" + CONTACTS.email}>{CONTACTS.email}</a></li>
+            <li>
+              <a href={"https://instagram.com/" + CONTACTS.instagram} target="_blank" rel="noopener">
+                Instagram — @{CONTACTS.instagram}
+              </a>
+            </li>
+            <li>Almadies — ouverture en octobre 2026</li>
           </ul>
         </div>
       </div>

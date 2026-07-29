@@ -20,7 +20,7 @@ export default function Hero() {
               <path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11Z" stroke="currentColor" strokeWidth="2" />
               <circle cx="12" cy="10" r="2.5" fill="currentColor" />
             </svg>
-            Dakar-Mermoz&nbsp;·&nbsp;enfants &amp; adultes
+            Mermoz &amp; île de Ngor&nbsp;·&nbsp;enfants &amp; adultes
           </p>
 
           <h1 className="hero__title" aria-label="Un lieu qui relie. Un lieu qui élève. Un lieu qui construit l'humain.">
@@ -42,10 +42,10 @@ export default function Hero() {
           </h1>
 
           <p className="hero__text reveal-load" style={{ "--d": ".9s" }}>
-            <strong>Xel i</strong> est la première école d'art extrascolaire du Sénégal, pour
-            enfants et adultes. Notre conviction : développer les compétences artistiques dès le
-            plus jeune âge — dans un monde où l'image prend de plus en plus de place, savoir la
-            créer est devenu indispensable.
+            <strong>Xel-i</strong> est la première école d'art extrascolaire de Dakar,{" "}
+            <strong>ouverte toute l'année</strong>, pour enfants et adultes. Dans un monde plein
+            d'images, nous apprenons aux enfants à créer les leurs — libres et fiers de ce
+            qu'ils font.
           </p>
 
           <div className="hero__actions reveal-load" style={{ "--d": "1.05s" }}>

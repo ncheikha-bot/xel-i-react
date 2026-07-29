@@ -4,12 +4,18 @@ import { useState } from "react";
 
 const PROGRAMMES = [
   {
-    groupe: "Cours d'art (enfants)",
-    options: ["Peinture", "Dessin", "Poterie & sculpture", "Calligraphie", "Crochet & arts textiles", "Théâtre"],
+    groupe: "Cours d'Art à l'année — Mermoz",
+    options: [
+      "Peinture", "Théâtre", "Calligraphie", "Dessin",
+      "Activité manuelle", "Modelage", "Perlage",
+    ],
   },
   {
-    groupe: "Art-Thlète (art + sport)",
-    options: ["Art-Thlète — été sur l'île de Ngor (6-18 ans)", "Art-Thlète — Mermoz (dès 2 ans ½)"],
+    groupe: "ART'thlète (art + sport)",
+    options: [
+      "Camp ART'thlète — île de Ngor (6-18 ans)",
+      "Programme ART'thlète Tennis — Mermoz",
+    ],
   },
   {
     groupe: "Cours adultes",
@@ -22,10 +28,12 @@ const VIDE = { eleve: "", age: "", programme: "", parent: "", telephone: "", ema
 /** Aide contextuelle selon le programme choisi */
 function aideProgramme(valeur) {
   if (!valeur) return "";
-  if (valeur.includes("Ngor")) return "☀️ Cet été sur l'île de Ngor — pour les 6 à 18 ans.";
-  if (valeur.includes("Art-Thlète — Mermoz")) return "🏠 À Mermoz — accessible dès 2 ans et demi.";
+  if (valeur.includes("Ngor")) {
+    return "🏝️ Île de Ngor, de 8h à 19h — et -15 % jusqu'au 10 août, tarif dégressif pour les familles.";
+  }
+  if (valeur.includes("Tennis")) return "🎾 À l'Olympic Club (Mermoz) — l'art et le tennis dans un même parcours.";
   if (valeur.includes("adultes")) return "🎨 Cours adultes à Mermoz — dessin et peinture pour l'instant.";
-  return "📍 À Dakar-Mermoz — programme structuré sur 6 mois.";
+  return "📍 Olympic Club (Mermoz) — cours à l'année, tout le matériel est fourni.";
 }
 
 export default function Inscription() {

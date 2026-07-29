@@ -1,9 +1,8 @@
 /* ============ MARQUEE : bandeau défilant des disciplines ============ */
 
-const DISCIPLINES = [
-  "Peinture", "Dessin", "Poterie", "Sculpture",
-  "Calligraphie", "Crochet", "Théâtre", "Enfants & adultes",
-];
+import { DISCIPLINES as SEPT } from "../lib/contenu.js";
+
+const DISCIPLINES = [...SEPT, "Enfants & adultes"];
 
 function Groupe() {
   return (

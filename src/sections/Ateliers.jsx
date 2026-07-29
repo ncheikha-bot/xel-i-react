@@ -1,4 +1,4 @@
-/* ============ COURS D'ART : 7 disciplines + note cours adultes ============ */
+/* ============ LES 7 DISCIPLINES + tout le matériel fourni ============ */
 
 import { asset } from "../lib/blog.js";
 
@@ -38,6 +38,7 @@ function IllustrationTheatre() {
   );
 }
 
+/* Les 7 domaines d'activité de Xel-i */
 const COURS = [
   {
     titre: "Peinture",
@@ -47,18 +48,10 @@ const COURS = [
     w: 1600, h: 1066,
   },
   {
-    titre: "Dessin",
-    texte: "Le regard avant le trait : observation, repères et perspective — les fondations de toutes les autres disciplines.",
-    image: "assets/photos/atelier-dessin-regle.jpg",
-    alt: "Un élève trace ses repères à la règle avant de dessiner",
-    w: 1066, h: 1600, position: "center 38%",
-  },
-  {
-    titre: "Poterie & sculpture",
-    texte: "La matière prend forme entre les mains : modelage, volumes, motricité fine et patience du geste.",
-    image: "assets/photos/atelier-poterie-pots.jpg",
-    alt: "Trois pots fraîchement peints en rose, rouge et violet sèchent au soleil de l'atelier",
-    w: 1066, h: 1600, position: "center 62%",
+    titre: "Théâtre",
+    texte: "Corps, voix et présence : l'enfant découvre qu'il a quelque chose à dire au monde.",
+    illustration: <IllustrationTheatre />,
+    lien: { href: "#theatre", libelle: "Voir le programme théâtre" },
   },
   {
     titre: "Calligraphie",
@@ -66,17 +59,32 @@ const COURS = [
     illustration: <IllustrationCalligraphie />,
   },
   {
-    titre: "Crochet & arts textiles",
-    texte: "Des ateliers qui rassemblent les générations autour du fil — concentration, minutie et fierté de l'objet fini.",
-    image: "assets/photos/atelier-crochet-enfant.jpg",
-    alt: "Une encadrante guide les mains d'une petite élève qui apprend le crochet",
+    titre: "Dessin",
+    texte: "Le regard avant le trait : observation, repères et perspective — les fondations de toutes les autres disciplines.",
+    image: "assets/photos/atelier-dessin-regle.jpg",
+    alt: "Un élève trace ses repères à la règle avant de dessiner",
+    w: 1066, h: 1600, position: "center 38%",
+  },
+  {
+    titre: "Activité manuelle",
+    texte: "Découper, coller, assembler, crocheter : la main apprend en fabriquant, et l'objet fini devient une fierté.",
+    image: "assets/photos/atelier-collage-fleur.jpg",
+    alt: "Un enfant réalise le collage d'une fleur peinte en papier découpé",
     w: 1600, h: 1066,
   },
   {
-    titre: "Théâtre",
-    texte: "Corps, voix et présence : l'enfant découvre qu'il a quelque chose à dire au monde.",
-    illustration: <IllustrationTheatre />,
-    lien: { href: "#theatre", libelle: "Voir le programme théâtre" },
+    titre: "Modelage",
+    texte: "La matière prend forme entre les mains : volumes, motricité fine et patience du geste.",
+    image: "assets/photos/atelier-modelage-mains.jpg",
+    alt: "Les mains d'un enfant façonnent l'argile sur la table de l'atelier",
+    w: 1600, h: 1066,
+  },
+  {
+    titre: "Perlage",
+    texte: "Perles, sequins et boutons composent des œuvres éclatantes — minutie, patience et sens de la couleur.",
+    image: "assets/photos/oeuvres-eleves.jpg",
+    alt: "Trois portraits créés par les élèves en sequins, perles et boutons",
+    w: 1066, h: 1600, position: "center 45%",
   },
 ];
 
@@ -90,12 +98,12 @@ export default function Ateliers() {
         </h2>
         <p className="section__intro reveal" style={{ "--d": ".14s" }}>
           Une formule accessible qui ouvre l'accès à de nombreuses disciplines — pour les enfants,
-          et aussi pour les adultes.
+          et aussi pour les adultes. <strong>Tout le matériel est fourni.</strong>
         </p>
 
         <ul className="ateliers__grid">
           {COURS.map((c, i) => (
-            <li className="atelier-card reveal" style={{ "--d": i * 0.08 + "s" }} key={c.titre}>
+            <li className="atelier-card reveal" style={{ "--d": (i % 3) * 0.08 + "s" }} key={c.titre}>
               {c.illustration ? (
                 <div className="atelier-card__img atelier-card__img--illu" aria-hidden="true">
                   {c.illustration}
@@ -120,13 +128,23 @@ export default function Ateliers() {
           ))}
         </ul>
 
-        <p className="ateliers__adultes reveal">
-          <span aria-hidden="true">🎨</span>
-          <span>
-            <strong>Et pour les adultes ?</strong> Des cours de dessin et de peinture sont ouverts —
-            pour l'instant ! D'autres disciplines arrivent.
-          </span>
-        </p>
+        <div className="ateliers__bas">
+          <p className="ateliers__adultes reveal">
+            <span aria-hidden="true">🎨</span>
+            <span>
+              <strong>Et pour les adultes ?</strong> Des cours de dessin et de peinture sont ouverts —
+              pour l'instant ! D'autres disciplines arrivent.
+            </span>
+          </p>
+          <p className="ateliers__expo reveal" style={{ "--d": ".1s" }}>
+            <span aria-hidden="true">🖼️</span>
+            <span>
+              <strong>L'exposition de fin d'année.</strong> Chaque année, Xel-i organise une
+              exposition qui montre toute l'évolution de ses artistes — un moment de fierté
+              pour les enfants et les familles.
+            </span>
+          </p>
+        </div>
       </div>
     </section>
   );
