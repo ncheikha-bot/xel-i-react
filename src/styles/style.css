@@ -996,6 +996,29 @@ h1, h2, h3 {
 .ecole strong { display: block; color: var(--cream); line-height: 1.35; margin-bottom: .3rem; }
 .ecole p { font-size: .92rem; color: rgba(250, 246, 239, .8); }
 
+/* Photos de réalisations en établissement */
+.ecoles__photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-top: 1.6rem;
+}
+.ecoles__photo { margin: 0; }
+.ecoles__photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 4px solid rgba(250, 246, 239, .12);
+}
+.ecoles__photo figcaption {
+  margin-top: .6rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: .86rem;
+  color: rgba(250, 246, 239, .75);
+}
+
 .theatre__focus { margin-top: 3.5rem; }
 .theatre__focus-titre {
   font-size: clamp(1.25rem, 2.6vw, 1.75rem);
@@ -1652,6 +1675,7 @@ h1, h2, h3 {
   .ngor__grid { grid-template-columns: repeat(2, 1fr); }
   .emploi__grid { grid-template-columns: repeat(2, 1fr); }
   .ecoles__liste { grid-template-columns: 1fr; }
+  .ecoles__photos { grid-template-columns: repeat(3, 1fr); gap: .9rem; }
 }
 
 @media (max-width: 860px) {
@@ -1716,6 +1740,7 @@ h1, h2, h3 {
   .emploi__grid { grid-template-columns: 1fr; }
   .offres__liste { grid-template-columns: 1fr; }
   .contact__sites { grid-template-columns: 1fr; }
+  .ecoles__photos { grid-template-columns: 1fr 1fr; }
   .programmes { margin-top: 2rem; }
 
   .slider__item { height: clamp(220px, 52vw, 320px); }

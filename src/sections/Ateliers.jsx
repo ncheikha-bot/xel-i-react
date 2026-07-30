@@ -2,75 +2,43 @@
 
 import { asset } from "../lib/blog.js";
 
-/* Illustration SVG pour la calligraphie (aucune photo disponible) */
-function IllustrationCalligraphie() {
-  return (
-    <svg viewBox="0 0 300 200" role="img" aria-label="Illustration d'un trait de calligraphie">
-      <circle cx="240" cy="52" r="34" fill="#DFB0CD" opacity=".5" />
-      <circle cx="55" cy="150" r="26" fill="#EBBE36" opacity=".45" />
-      <path d="M40 130 C 80 40, 120 40, 150 95 S 215 165, 262 78" fill="none" stroke="#3E4E3E" strokeWidth="14" strokeLinecap="round" />
-      <path d="M40 130 C 80 40, 120 40, 150 95" fill="none" stroke="#EBBE36" strokeWidth="5" strokeLinecap="round" opacity=".85" />
-      <circle cx="268" cy="66" r="7" fill="#3E4E3E" />
-    </svg>
-  );
-}
-
-/* Illustration SVG pour le théâtre (masques) */
-function IllustrationTheatre() {
-  return (
-    <svg viewBox="0 0 300 200" role="img" aria-label="Illustration de masques de théâtre">
-      <circle cx="70" cy="55" r="38" fill="#DFB0CD" opacity=".55" />
-      <circle cx="245" cy="150" r="30" fill="#EBBE36" opacity=".5" />
-      <g transform="rotate(-8 120 100)">
-        <ellipse cx="120" cy="100" rx="46" ry="56" fill="#EBBE36" />
-        <circle cx="104" cy="88" r="6" fill="#3E4E3E" />
-        <circle cx="136" cy="88" r="6" fill="#3E4E3E" />
-        <path d="M100 118 Q120 138 140 118" stroke="#3E4E3E" strokeWidth="6" fill="none" strokeLinecap="round" />
-      </g>
-      <g transform="rotate(10 195 105)">
-        <ellipse cx="195" cy="105" rx="42" ry="52" fill="#DFB0CD" />
-        <circle cx="181" cy="94" r="5.5" fill="#3E4E3E" />
-        <circle cx="209" cy="94" r="5.5" fill="#3E4E3E" />
-        <path d="M179 132 Q195 118 211 132" stroke="#3E4E3E" strokeWidth="6" fill="none" strokeLinecap="round" />
-      </g>
-      <path d="M30 170 C 60 150, 90 185, 130 170" stroke="#3E4E3E" strokeWidth="4" fill="none" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-/* Les 7 domaines d'activité de Xel-i */
+/* Les 7 domaines d'activité de Xel-i — chacun illustré par une vraie photo d'atelier */
 const COURS = [
   {
     titre: "Peinture",
     texte: "Liberté de création : choix des couleurs, des formes, de l'interprétation et de l'expérimentation — le geste libre avant tout.",
-    image: "assets/photos/atelier-peinture-toile.jpg",
-    alt: "Une élève aux longues tresses peint une sirène sur sa toile bleue",
+    image: "assets/photos/peinture-plein-air-sol.jpg",
+    alt: "Une élève en tablier peint une grande planche de bois, assise au sol en plein air",
     w: 1600, h: 1066,
   },
   {
     titre: "Théâtre",
     texte: "Corps, voix et présence : l'enfant découvre qu'il a quelque chose à dire au monde.",
-    illustration: <IllustrationTheatre />,
+    image: "assets/photos/theatre-seance-groupe.jpg",
+    alt: "Un professeur guide une élève devant le groupe assis sur la natte, en extérieur",
+    w: 1066, h: 1600, position: "center 40%",
     lien: { href: "#theatre", libelle: "Voir le programme théâtre" },
   },
   {
     titre: "Calligraphie",
     texte: "L'élégance du trait : rythme, précision et concentration — l'écriture devient un art à part entière.",
-    illustration: <IllustrationCalligraphie />,
+    image: "assets/photos/calligraphie-listes-plume.jpg",
+    alt: "Des élèves écrivent des listes de pays à la plume, en pleine page calligraphiée",
+    w: 960, h: 1280, position: "center 55%",
   },
   {
     titre: "Dessin",
-    texte: "Le regard avant le trait : observation, repères et perspective — les fondations de toutes les autres disciplines.",
-    image: "assets/photos/atelier-dessin-regle.jpg",
-    alt: "Un élève trace ses repères à la règle avant de dessiner",
-    w: 1066, h: 1600, position: "center 38%",
+    texte: "Le regard avant le trait : graphisme, observation et précision — les fondations de toutes les autres disciplines.",
+    image: "assets/photos/graphisme-pointilles.jpg",
+    alt: "Une élève repasse au feutre un motif de graphisme tracé en pointillés",
+    w: 1600, h: 900,
   },
   {
     titre: "Activité manuelle",
-    texte: "Découper, coller, assembler, crocheter : la main apprend en fabriquant, et l'objet fini devient une fierté.",
-    image: "assets/photos/atelier-collage-fleur.jpg",
-    alt: "Un enfant réalise le collage d'une fleur peinte en papier découpé",
-    w: 1600, h: 1066,
+    texte: "Découper, coller, assembler : la main apprend en fabriquant, et l'objet fini devient une fierté.",
+    image: "assets/photos/manuel-fleurs-papier.jpg",
+    alt: "Des fleurs en papier de couleur assemblées sur la table, pistolet à colle à côté",
+    w: 1600, h: 1034,
   },
   {
     titre: "Modelage",
@@ -81,10 +49,10 @@ const COURS = [
   },
   {
     titre: "Perlage",
-    texte: "Perles, sequins et boutons composent des œuvres éclatantes — minutie, patience et sens de la couleur.",
-    image: "assets/photos/oeuvres-eleves.jpg",
-    alt: "Trois portraits créés par les élèves en sequins, perles et boutons",
-    w: 1066, h: 1600, position: "center 45%",
+    texte: "Perles, sequins et fils composent des œuvres éclatantes — minutie, patience et sens de la couleur.",
+    image: "assets/photos/perlage-couronne-perles.jpg",
+    alt: "Une couronne de perles jaunes et blanches au milieu des pelotes de laine colorées",
+    w: 960, h: 1280, position: "center 50%",
   },
 ];
 
@@ -104,19 +72,13 @@ export default function Ateliers() {
         <ul className="ateliers__grid">
           {COURS.map((c, i) => (
             <li className="atelier-card reveal" style={{ "--d": (i % 3) * 0.08 + "s" }} key={c.titre}>
-              {c.illustration ? (
-                <div className="atelier-card__img atelier-card__img--illu" aria-hidden="true">
-                  {c.illustration}
-                </div>
-              ) : (
-                <div className="atelier-card__img">
-                  <img
-                    src={asset(c.image)} alt={c.alt}
-                    width={c.w} height={c.h} loading="lazy"
-                    style={c.position ? { objectPosition: c.position } : undefined}
-                  />
-                </div>
-              )}
+              <div className="atelier-card__img">
+                <img
+                  src={asset(c.image)} alt={c.alt}
+                  width={c.w} height={c.h} loading="lazy"
+                  style={c.position ? { objectPosition: c.position } : undefined}
+                />
+              </div>
               <div className="atelier-card__body">
                 <h3>{c.titre}</h3>
                 <p>

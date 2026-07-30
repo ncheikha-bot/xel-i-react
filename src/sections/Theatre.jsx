@@ -1,5 +1,6 @@
 /* ============ NOTRE TRAVAIL AVEC LES ÉCOLES (7 domaines) + le théâtre ============ */
 
+import { asset } from "../lib/blog.js";
 import { DISCIPLINES, ECOLES } from "../lib/contenu.js";
 
 const BENEFICES = [
@@ -43,6 +44,33 @@ export default function Theatre() {
               </li>
             ))}
           </ul>
+
+          <div className="ecoles__photos">
+            <figure className="ecoles__photo reveal">
+              <img
+                src={asset("assets/photos/manuel-poissons-papier.jpg")}
+                alt="Des poissons en papier aux écailles colorées réalisés par un groupe d'enfants"
+                width="960" height="1280" loading="lazy"
+              />
+              <figcaption>Activité manuelle en groupe</figcaption>
+            </figure>
+            <figure className="ecoles__photo reveal" style={{ "--d": ".1s" }}>
+              <img
+                src={asset("assets/photos/peinture-oeuvres-planches.jpg")}
+                alt="Les œuvres peintes des élèves alignées à sécher sur les bâches"
+                width="1600" height="1066" loading="lazy"
+              />
+              <figcaption>Les œuvres d'une séance de peinture</figcaption>
+            </figure>
+            <figure className="ecoles__photo reveal" style={{ "--d": ".2s" }}>
+              <img
+                src={asset("assets/photos/calligraphie-carte-merci.jpg")}
+                alt="Une carte « Merci Maman » calligraphiée, ornée d'une feuille en relief"
+                width="960" height="1280" loading="lazy"
+              />
+              <figcaption>Calligraphie &amp; carte de fête</figcaption>
+            </figure>
+          </div>
         </div>
 
         {/* ---- Focus théâtre ---- */}

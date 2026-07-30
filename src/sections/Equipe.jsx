@@ -15,9 +15,10 @@ export default function Equipe() {
         <div className="equipe__visual reveal">
           <div className="equipe__photo-main">
             <img
-              src={asset("assets/photos/equipe-sculpture-prof.jpg")}
-              alt="Un professeur de Xel i sculpte une tête en argile pendant qu'une élève travaille à ses côtés"
-              width="1600" height="1066" loading="lazy"
+              src={asset("assets/photos/theatre-seance-groupe.jpg")}
+              alt="Un professeur guide une élève devant le groupe assis sur la natte, à l'extérieur de l'école"
+              width="1066" height="1600" loading="lazy"
+              style={{ objectPosition: "center 38%" }}
             />
           </div>
           <div className="equipe__photo-small reveal" style={{ "--d": ".2s" }}>
